@@ -8,6 +8,10 @@ A ClamAV frontend to scan for Viruses
   (on Mac, install via [brew](https://formulae.brew.sh/formula/clamav#default))
 - [CustomTkinter](https://customtkinter.tomschimansky.com/documentation/widgets) (by Tom Schimansky)
 
+<br>
+
+Code Repo: https://github.com/wrogner/AVScanner
+
 ### Credits
 
 &copy; 2023 by war
