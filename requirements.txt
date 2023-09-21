@@ -1,3 +1,5 @@
 # requirements for AVScanner
 
 customtkinter
+
+pygubu
