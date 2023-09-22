@@ -25,7 +25,8 @@ Code Repo: https://github.com/wrogner/AVScanner
 TODO:
 
 [x] Add remote repo<br>
-[ ] Setup GUI editing<br>
+[x] Setup GUI editing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PyGubu not really usable (outdated code)<br>
 [ ] Create application framework<br>
 [ ] Application deployment (packaging, executable)<br>
 [ ] Update logic<br>
