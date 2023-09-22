@@ -1,3 +1,5 @@
+<img src="x_img/AVScanner.png" width="150">
+
 # AVScanner
 
 A ClamAV frontend to scan for Viruses
@@ -16,6 +18,14 @@ Code Repo: https://github.com/wrogner/AVScanner
 
 &copy; 2023 by war
 
-### Open Issues
+### Open Issues / Roadmap
 
-[ ] Add remote repo
+<img src="x_img/roadmap.png" width="100">
+
+[x] Add remote repo<br>
+[ ] Setup GUI editing<br>
+[ ] Create application framework<br>
+[ ] Application deployment (packaging, executable)<br>
+[ ] Update logic<br>
+[ ] Simple Scanning (single file / directory)<br>
+[ ] update database (call freshclam)<br>
