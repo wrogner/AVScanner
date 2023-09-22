@@ -22,10 +22,13 @@ Code Repo: https://github.com/wrogner/AVScanner
 
 <img src="doc/img/roadmap.png" width="100">
 
+TODO:
+
 [x] Add remote repo<br>
 [ ] Setup GUI editing<br>
 [ ] Create application framework<br>
 [ ] Application deployment (packaging, executable)<br>
 [ ] Update logic<br>
+  [ ] setuptools<br>
 [ ] Simple Scanning (single file / directory)<br>
 [ ] update database (call freshclam)<br>
