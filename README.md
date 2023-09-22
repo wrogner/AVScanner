@@ -1,4 +1,4 @@
-<img src="x_img/AVScanner.png" width="150">
+<img src="doc/img/AVScanner.png" width="150">
 
 # AVScanner
 
@@ -20,7 +20,7 @@ Code Repo: https://github.com/wrogner/AVScanner
 
 ### Open Issues / Roadmap
 
-<img src="x_img/roadmap.png" width="100">
+<img src="doc/img/roadmap.png" width="100">
 
 [x] Add remote repo<br>
 [ ] Setup GUI editing<br>
