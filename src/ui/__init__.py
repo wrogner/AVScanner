@@ -1,0 +1,1 @@
+from .avscanner_ui import AVscanner
