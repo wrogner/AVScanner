@@ -1,6 +1,8 @@
 # requirements for AVScanner
 
 customtkinter
+darkdetect
 pillow
 
+# required only for GUI design
 pygubu
