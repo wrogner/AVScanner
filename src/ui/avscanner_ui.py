@@ -8,74 +8,62 @@ AVScanner user interface class
 :created:	2023.09.22
 """
 
+import os
+import pathlib
+from PIL import Image
 import tkinter as tk
 import tkinter.ttk as ttk
-from customtkinter import (CTk, CTkFrame, CTkLabel, CTkButton, set_appearance_mode)
+from customtkinter import (CTk, CTkFrame, CTkLabel, CTkButton, CTkImage, CTkFont, set_appearance_mode)
 
-# class Sidebar(CTkFrame):
+GUIPATH = os.path.dirname(os.path.realpath(__file__))
+IMGPATH = pathlib.Path(GUIPATH).parent.joinpath("img")
 
-#     def __init__(self, master=None, **kwargs):
-#         if master is None:
-#             master = app
-#         super().__init__(master, **kwargs)
+class AVscanner(CTk):
+    """Class AVscanner
 
-#         self.sb_heading_lbl = CTkLabel(self, text="Configuration")
-#         self.sb_heading_lbl.pack(side="top", ipadx=40, pady=(0,20))
-#         self.sb_config_btn = CTkButton(self, text="Scan")
-#         self.sb_config_btn.pack()
+    Scanner class that wraps around clamAV scanner
+
+    """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        self.geometry("720x480")
+        self.minsize(500, 400)
+        self.title("AVScanner")
+
+        self.guipath = GUIPATH
+        self.imgpath = IMGPATH
+        self.logo = CTkImage(Image.open(IMGPATH.joinpath("AVScanner.png")), size=(24, 24))
+
+        # grid layout 1x2
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+
+        # NAVIGATION FRAME
+        self.navigation_frame = CTkFrame(self, corner_radius=0, fg_color=("#eeeeee", "#555555"), width=200)
+        self.navigation_frame.grid(row=0, column=0, sticky="nsew")
+        self.navigation_frame.grid_rowconfigure(4, weight=1)
 
 
+        self.logo_label = CTkLabel(self.navigation_frame, text="  AVScanner", image=self.logo, compound="left", font=CTkFont(family=".AppleSystemUIFont", size=15, weight="bold"))
+        self.logo_label.grid(row=0, column=0, pady=10, padx=20, sticky="new")
 
-class AVscanner():
+        self.scan_button = CTkButton(self.navigation_frame, text="Scan", font=CTkFont(family=".AppleSystemUIFont", size=15, weight="bold"),
+                                     corner_radius=0, height=40, border_spacing=10, fg_color="transparent", text_color=("gray20", "gray90"), hover_color=("gray70", "gray30"), anchor="w")
+        self.scan_button.grid(row=1, column=0, sticky="ew")
 
-    def __init__(self, master=None, translator=None):
-        _ = translator
-        if translator is None:
-            def _(x): return x
-        # general ui
-        self.avscanner = CTk(None)
-        set_appearance_mode("system")
-        self.avscanner.geometry("640x480")
-        self.avscanner.minsize(500, 400)
-        self.avscanner.title("AVScanner")
+        self.parameter_button = CTkButton(self.navigation_frame, text="Parameters", font=CTkFont(family=".AppleSystemUIFont", size=15, weight="bold"),
+                                          corner_radius=0, height=40, border_spacing=10, fg_color="transparent", text_color=("gray20", "gray90"), hover_color=("gray70", "gray30"), anchor="w")
+        self.parameter_button.grid(row=2, column=0, sticky="ew")
 
-        self.sidebar_width = tk.StringVar(value="")
-        self.panedwindow_1 = ttk.Panedwindow(self.avscanner, orient="horizontal")
+        self.copyright_label = CTkLabel(self.navigation_frame, text="© 2023 by war", font=CTkFont(family=".AppleSystemUIFont", size=10))
+        self.copyright_label.grid(row=4, column=0, padx=10, sticky="sw")
+        # WORK FRAME
 
-        # SIDEBAR
-        # if subcomponents need be put into separate classes
-        # self.ctkframe_1 = Sidebar(master=self.panedwindow_1, corner_radius=0, fg_color=("#eeeeee","#555555"))
-        self.ctkframe_1 = CTkFrame(self.panedwindow_1, corner_radius=0, fg_color=("#eeeeee","#555555"))
-        self.ctkframe_1.pack()
-        self.ctklabel_1 = CTkLabel(self.ctkframe_1, text=_("Sidebar"))
-        self.ctklabel_1.pack(side="top", ipadx=40)
-        self.panedwindow_1.add(self.ctkframe_1)
-
-        # CONTENT FRAME
-        self.ctkframe_2 = CTkFrame(self.panedwindow_1, corner_radius=0, fg_color=("#ffffff", "#333333"))
-        self.ctkframe_2.pack()
-        self.ctklabel_2 = CTkLabel(self.ctkframe_2, text=_("Content"))
-        self.ctklabel_2.pack(side="top")
-        self.ctklabel_3 = CTkLabel(self.ctkframe_2, textvariable=self.sidebar_width)
-        self.ctklabel_3.pack(pady=20)
-        self.ctkbutton_1 = CTkButton(self.ctkframe_2, text=_("Get Sidebar width"), command=self.get_frame_width)
-        self.ctkbutton_1.pack(pady=20)
-        self.panedwindow_1.add(self.ctkframe_2)
-
-        self.panedwindow_1.pack(expand=True, fill="both", side="top")
-
-        # Main widget
-        self.mainwindow = self.avscanner
 
     def run(self):
-        self.mainwindow.mainloop()
-
-    def get_frame_width(self):
-        sidebar_width = self.ctkframe_1.cget("width")
-        self.ctklabel_3.configure(text=sidebar_width)
-        self.sidebar_width.set(sidebar_width)
-        return sidebar_width
-
+        self.mainloop()
 
 
 if __name__ == "__main__":
