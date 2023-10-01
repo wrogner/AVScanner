@@ -12,6 +12,19 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from customtkinter import (CTk, CTkFrame, CTkLabel, CTkButton, set_appearance_mode)
 
+# class Sidebar(CTkFrame):
+
+#     def __init__(self, master=None, **kwargs):
+#         if master is None:
+#             master = app
+#         super().__init__(master, **kwargs)
+
+#         self.sb_heading_lbl = CTkLabel(self, text="Configuration")
+#         self.sb_heading_lbl.pack(side="top", ipadx=40, pady=(0,20))
+#         self.sb_config_btn = CTkButton(self, text="Scan")
+#         self.sb_config_btn.pack()
+
+
 
 class AVscanner():
 
@@ -19,7 +32,7 @@ class AVscanner():
         _ = translator
         if translator is None:
             def _(x): return x
-        # build ui
+        # general ui
         self.avscanner = CTk(None)
         set_appearance_mode("system")
         self.avscanner.geometry("640x480")
@@ -29,32 +42,27 @@ class AVscanner():
         self.sidebar_width = tk.StringVar(value="")
         self.panedwindow_1 = ttk.Panedwindow(self.avscanner, orient="horizontal")
 
+        # SIDEBAR
+        # if subcomponents need be put into separate classes
+        # self.ctkframe_1 = Sidebar(master=self.panedwindow_1, corner_radius=0, fg_color=("#eeeeee","#555555"))
         self.ctkframe_1 = CTkFrame(self.panedwindow_1, corner_radius=0, fg_color=("#eeeeee","#555555"))
         self.ctkframe_1.pack()
-        # self.ctkframe_1.grid(row=0, column=0, sticky="nsw")
         self.ctklabel_1 = CTkLabel(self.ctkframe_1, text=_("Sidebar"))
         self.ctklabel_1.pack(side="top", ipadx=40)
-        # self.ctklabel_1.grid(row=0, column=0, sticky="n", ipadx=40)
         self.panedwindow_1.add(self.ctkframe_1)
 
+        # CONTENT FRAME
         self.ctkframe_2 = CTkFrame(self.panedwindow_1, corner_radius=0, fg_color=("#ffffff", "#333333"))
         self.ctkframe_2.pack()
-        # self.ctkframe_2.grid(row=0, column=0, sticky="nse")
         self.ctklabel_2 = CTkLabel(self.ctkframe_2, text=_("Content"))
         self.ctklabel_2.pack(side="top")
-        # self.ctklabel_2.grid(row=0, column=0)
         self.ctklabel_3 = CTkLabel(self.ctkframe_2, textvariable=self.sidebar_width)
         self.ctklabel_3.pack(pady=20)
-        # self.ctklabel_3.grid(row=1, column=0)
         self.ctkbutton_1 = CTkButton(self.ctkframe_2, text=_("Get Sidebar width"), command=self.get_frame_width)
         self.ctkbutton_1.pack(pady=20)
-        # self.ctkbutton_1.grid(row=2, column=0)
         self.panedwindow_1.add(self.ctkframe_2)
 
-        self.ctkframe_1._desired_width=300
-
         self.panedwindow_1.pack(expand=True, fill="both", side="top")
-
 
         # Main widget
         self.mainwindow = self.avscanner
