@@ -27,7 +27,7 @@ TODO:
 [x] Add remote repo<br>
 [x] Setup GUI editing<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PyGubu not really usable (outdated code)<br>
-[ ] Create application framework<br>
+[x] Create application framework<br>
 [ ] Application deployment (packaging, executable)<br>
 [ ] Update logic<br>
   [ ] setuptools<br>
