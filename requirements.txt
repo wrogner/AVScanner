@@ -6,3 +6,11 @@ pillow
 
 # required only for GUI design
 pygubu
+# pygubu-designer
+
+# required for build
+
+wheel
+setuptools
+build
+sphinx

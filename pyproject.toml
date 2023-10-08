@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools"
+
+[project]
+name = "AVScanner"
+version = "20230.0.0"
+description = "ClamAV Frontend for Mac"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE.txt"}
+authors = [
+    {name = "Wolf Rogner", email = "war@rsb.at"},
+]
+maintainers = [
+    {name = "Wolf Rogner", email = "war@rsb.at"},
+]
+keywords = ["Antivirus", "ClamAV", "MacOS"]
+
+[project.optional-dependencies]
+gui = ["CustomTkinter"]
