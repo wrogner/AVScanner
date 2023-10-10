@@ -51,7 +51,7 @@ class AVscanner(CTk):
 
         self.scan_button = CTkButton(self.navigation_frame, text="Scan", font=CTkFont(family=".AppleSystemUIFont", size=15, weight="bold"),
                                      corner_radius=0, height=40, border_spacing=20,
-                                     fg_color="transparent", text_color=("gray20", "gray90"), hover_color=("gray70", "gray30"),
+                                      fg_color="transparent", text_color=("gray20", "gray90"), hover_color=("gray70", "gray30"),
                                      anchor="w", command=self.click_scan_button)
         self.scan_button.grid(row=1, column=0, sticky="ew")
 

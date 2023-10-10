@@ -1,10 +1,10 @@
 [build-system]
 requires = ["setuptools"]
-build-backend = "setuptools"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "AVScanner"
-version = "20230.0.0"
+version = "2023.0.0"
 description = "ClamAV Frontend for Mac"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -16,6 +16,4 @@ maintainers = [
     {name = "Wolf Rogner", email = "war@rsb.at"},
 ]
 keywords = ["Antivirus", "ClamAV", "MacOS"]
-
-[project.optional-dependencies]
-gui = ["CustomTkinter"]
+dependencies = ["pillow", "customtkinter"]
