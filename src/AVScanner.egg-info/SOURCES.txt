@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/AVScanner/AVScanner.py
+src/AVScanner.egg-info/PKG-INFO
+src/AVScanner.egg-info/SOURCES.txt
+src/AVScanner.egg-info/dependency_links.txt
+src/AVScanner.egg-info/requires.txt
+src/AVScanner.egg-info/top_level.txt
+src/AVScanner/ui/__init__.py
+src/AVScanner/ui/avscanner.py
+src/AVScanner/ui/avscanner_ui.py
+src/AVScanner/ui/avscanner_ui_old.py
