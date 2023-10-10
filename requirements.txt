@@ -13,4 +13,6 @@ pillow
 # wheel         # automatically downloaded by build
 # setuptools    # automatically downloaded by build
 setuptools      # currently needed for customtkinter
-# sphinx
+build           # build package
+twine           # upload to PyPI, docs: https://twine.readthedocs.io/en/latest/
+# sphinx          # document python packages
