@@ -29,8 +29,11 @@ TODO:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PyGubu not really usable (outdated code)<br>
 [x] Create application framework<br>
 [ ] Application deployment (packaging, executable)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x] create PyPI account [https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x] install build tools (build, setuptools) [https://setuptools.pypa.io/en/latest/index.html]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x] create buildable package [https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] upload using twine [https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives]<br>
 [ ] Update logic<br>
-  [ ] setuptools<br>
 [ ] Simple Scanning (single file / directory)<br>
 [ ] update database (call freshclam)<br>
 

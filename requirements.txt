@@ -5,12 +5,12 @@ darkdetect
 pillow
 
 # required only for GUI design
-pygubu
+# pygubu
 # pygubu-designer
 
 # required for build
 
-wheel
-setuptools
-build
-sphinx
+# wheel         # automatically downloaded by build
+# setuptools    # automatically downloaded by build
+setuptools      # currently needed for customtkinter
+# sphinx
