@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "AVScanner"
-version = "2023.0.1"
+version = "2023.0.1a"
 description = "ClamAV Frontend for Mac"
 readme = "README.md"
 requires-python = ">=3.11"
